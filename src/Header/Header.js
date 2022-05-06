@@ -33,10 +33,12 @@ function Header() {
         </section>
       </nav>
 
-      <section className="header__optionBasket">
-        <ShoppingCart />
-        <span className="header__optionLineTwo header__basketCount">0</span>
-      </section>
+      <Link to="/checkout">
+        <section className="header__optionBasket">
+          <ShoppingCart />
+          <span className="header__optionLineTwo header__basketCount">0</span>
+        </section>
+      </Link>
     </header>
   );
 }
