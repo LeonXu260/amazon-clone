@@ -2,8 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Search, ShoppingCart } from "@material-ui/icons";
 import "./Header.css";
+import { useStateValue } from "../redux/StateProvider";
 
 function Header() {
+  const [{ basket }, dispatch] = useStateValue();
+
   return (
     <header className="header">
       <Link to="/">
@@ -36,7 +39,9 @@ function Header() {
       <Link to="/checkout">
         <section className="header__optionBasket">
           <ShoppingCart />
-          <span className="header__optionLineTwo header__basketCount">0</span>
+          <span className="header__optionLineTwo header__basketCount">
+            {basket?.length}
+          </span>
         </section>
       </Link>
     </header>
