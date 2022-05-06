@@ -1,5 +1,5 @@
 import React from "react";
-import { Search } from "@material-ui/icons";
+import { Search, ShoppingCart } from "@material-ui/icons";
 import "./Header.css";
 
 function Header() {
@@ -29,6 +29,11 @@ function Header() {
           <span className="header__optionLineTwo">Prime</span>
         </section>
       </nav>
+
+      <section className="header__optionBasket">
+        <ShoppingCart />
+        <span className="header__optionLineTwo header__basketCount">0</span>
+      </section>
     </header>
   );
 }
