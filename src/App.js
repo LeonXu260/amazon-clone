@@ -1,8 +1,16 @@
 import React from "react";
+
+// Import file
+import Header from "./Header/Header";
+
 import "./App.css";
 
 function App() {
-  return <div className="app">App</div>;
+  return (
+    <section className="app">
+      <Header />
+    </section>
+  );
 }
 
 export default App;
