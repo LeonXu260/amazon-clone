@@ -1,7 +1,7 @@
 import React from "react";
 import "./Product.css";
 
-function Product() {
+function Product({ title, image, price, rating }) {
   return (
     <section className="product">
       <article className="product__info">
