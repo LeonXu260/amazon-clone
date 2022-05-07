@@ -41,6 +41,7 @@ function App() {
       <section className="app">
         <Switch>
           <Route path="/orders">
+            <Header />
             <Orders />
           </Route>
           <Route path="/login">
