@@ -14,7 +14,7 @@ function Login() {
       </Link>
 
       <article className="login__container">
-        <h1>Sign in</h1>
+        <h1>Sign In</h1>
         <form>
           <h5>Email</h5>
           <input type="email" />
