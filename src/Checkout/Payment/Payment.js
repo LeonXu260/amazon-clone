@@ -10,11 +10,14 @@ function Payment() {
   const stripe = useStripe();
   const elements = useElements();
 
-  const [error, handleError] = useState(null);
+  const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
 
   const handleSubmit = (e) => {};
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    setDisabled(e.empty);
+    setError(e.error ? e.error.message : "");
+  };
 
   return (
     <section className="payment">
