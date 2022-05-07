@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Search, ShoppingCart } from "@material-ui/icons";
 import "./Header.css";
 import { useStateValue } from "../redux/StateProvider";
-import { auth } from "firebase";
+import { auth } from "../Auth/firebaseInit";
 
 function Header() {
   const [{ basket, user }] = useStateValue();
