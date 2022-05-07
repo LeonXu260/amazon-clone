@@ -22,10 +22,12 @@ function Header() {
       </section>
 
       <nav className="header__nav">
-        <section className="header__option">
-          <span className="header__optionLineOne">Hello</span>
-          <span className="header__optionLineTwo">Sign In</span>
-        </section>
+        <Link to="/login">
+          <section className="header__option">
+            <span className="header__optionLineOne">Hello</span>
+            <span className="header__optionLineTwo">Sign In</span>
+          </section>
+        </Link>
         <section className="header__option">
           <span className="header__optionLineOne">Returns</span>
           <span className="header__optionLineTwo">& Orders</span>
