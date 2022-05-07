@@ -5,7 +5,7 @@ import CheckoutProduct from "../CheckoutProduct";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "../../redux/reducer";
-
+import { db } from "../../Auth/firebaseInit";
 import axios from "../../Auth/axios";
 import "./Payment.css";
 
@@ -43,6 +43,15 @@ function Payment() {
         },
       })
       .then(({ paymentIntent }) => {
+        db.collection("users")
+          .doc(user?.id)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
         setSucceed(true);
         setError(null);
         setProcessing(false);
