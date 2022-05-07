@@ -30,12 +30,18 @@ function Orders() {
   }, [user]);
   return (
     <section className="orders">
-      <h1>Your Orders</h1>
-      <article className="orders__order">
-        {orders?.map((order) => (
-          <Order order={order} />
-        ))}
-      </article>
+      {!user ? (
+        <h1 className="orders__error">Sorry, you have no orders!</h1>
+      ) : (
+        <>
+          <h1>Your Orders</h1>{" "}
+          <article className="orders__order">
+            {orders?.map((order) => (
+              <Order order={order} />
+            ))}
+          </article>
+        </>
+      )}
     </section>
   );
 }
