@@ -31,7 +31,7 @@ function Orders() {
   return (
     <section className="orders">
       {!user ? (
-        <h1 className="orders__error">Sorry, you have no orders!</h1>
+        <h1 className="orders__noitem">Sorry, you have no orders!</h1>
       ) : (
         <>
           <h1>Your Orders</h1>{" "}
