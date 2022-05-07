@@ -3,7 +3,7 @@ import { useStateValue } from "../../redux/StateProvider";
 import { Link } from "react-router-dom";
 import CheckoutProduct from "../CheckoutProduct";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { CurrencyFormat } from "react-currency-format";
+import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "../../redux/reducer";
 import "./Payment.css";
 
