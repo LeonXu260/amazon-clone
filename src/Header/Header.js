@@ -20,7 +20,7 @@ function Header() {
         <img
           className="header__logo"
           src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-          alt='amazon header logo'
+          alt="amazon header logo"
         />
       </Link>
 
@@ -30,7 +30,7 @@ function Header() {
       </section>
 
       <nav className="header__nav">
-        <Link to="/login">
+        <Link to={!user && "/login"}>
           <section onClick={authHandle} className="header__option">
             <span className="header__optionLineOne">Hello</span>
             <span className="header__optionLineTwo">
