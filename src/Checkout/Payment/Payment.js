@@ -12,6 +12,8 @@ function Payment() {
   const stripe = useStripe();
   const elements = useElements();
 
+  const [succeeded, setSucceed] = useState(false);
+  const [processing, setProcessing] = useState("");
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
 
@@ -70,7 +72,12 @@ function Payment() {
                   thousandSeparator={true}
                   prefix={"$"}
                 />
+                <button disabled={processing || disabled || succeeded}>
+                  <span>{processing ? <p>Processing...</p> : "Buy Now"}</span>
+                </button>
               </article>
+
+              {error && <article>{error}</article>}
             </form>
           </article>
         </article>
