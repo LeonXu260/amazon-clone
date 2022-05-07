@@ -3,9 +3,16 @@ import { Link } from "react-router-dom";
 import { Search, ShoppingCart } from "@material-ui/icons";
 import "./Header.css";
 import { useStateValue } from "../redux/StateProvider";
+import { auth } from "firebase";
 
 function Header() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }] = useStateValue();
+
+  const authHandle = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
 
   return (
     <header className="header">
@@ -23,9 +30,11 @@ function Header() {
 
       <nav className="header__nav">
         <Link to="/login">
-          <section className="header__option">
+          <section onClick={authHandle} className="header__option">
             <span className="header__optionLineOne">Hello</span>
-            <span className="header__optionLineTwo">Sign In</span>
+            <span className="header__optionLineTwo">
+              {user ? "Sign Out" : "Sign In"}
+            </span>
           </section>
         </Link>
         <section className="header__option">
