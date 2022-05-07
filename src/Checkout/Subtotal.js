@@ -1,10 +1,12 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "../redux/StateProvider";
 import { getBasketTotal } from "../redux/reducer";
 import "./Subtotal.css";
 
 function Subtotal() {
+  const history = useHistory();
   const [{ basket }, dispatch] = useStateValue();
   return (
     <section className="subtotal">
