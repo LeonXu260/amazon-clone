@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 
 function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const signIn = () => {};
   return (
     <section className="login">
       <Link to="/">
@@ -17,11 +21,21 @@ function Login() {
         <h1>Sign In</h1>
         <form>
           <h5>Email</h5>
-          <input type="email" />
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
           <h5>Password</h5>
-          <input type="password" />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-          <button className="login__signInButton">Sign In</button>
+          <button className="login__signInButton" onClick={signIn}>
+            Sign In
+          </button>
         </form>
 
         <p>
