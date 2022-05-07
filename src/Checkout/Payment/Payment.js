@@ -1,6 +1,6 @@
 import React from "react";
 import { useStateValue } from "../../redux/StateProvider";
-
+import { Link } from "react-router-dom";
 import CheckoutProduct from "../CheckoutProduct";
 import "./Payment.css";
 
@@ -9,6 +9,9 @@ function Payment() {
   return (
     <section className="payment">
       <article className="payment__container">
+        <h1>
+          Checkout (<Link to="/checkout">{basket?.length} items</Link>)
+        </h1>
         <article className="payment__section">
           <article className="payment__title">
             <h3>Delivery Address</h3>
