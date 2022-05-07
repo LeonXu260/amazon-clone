@@ -40,10 +40,14 @@ function Header() {
             </span>
           </section>
         </Link>
-        <section className="header__option">
-          <span className="header__optionLineOne">Returns</span>
-          <span className="header__optionLineTwo">& Orders</span>
-        </section>
+
+        <Link to="/orders">
+          <section className="header__option">
+            <span className="header__optionLineOne">Returns</span>
+            <span className="header__optionLineTwo">& Orders</span>
+          </section>
+        </Link>
+
         <section className="header__option">
           <span className="header__optionLineOne">Your</span>
           <span className="header__optionLineTwo">Prime</span>
