@@ -7,6 +7,7 @@ import Home from "./Home/Home";
 import Checkout from "./Checkout/Checkout";
 import Login from "./Auth/Login";
 import Payment from "./Checkout/Payment/Payment";
+import Orders from "./Checkout/Orders/Orders";
 
 import "./App.css";
 import { auth } from "./Auth/firebaseInit";
@@ -39,6 +40,9 @@ function App() {
     <Router>
       <section className="app">
         <Switch>
+          <Route path="/orders">
+            <Orders />
+          </Route>
           <Route path="/login">
             <Login />
           </Route>
