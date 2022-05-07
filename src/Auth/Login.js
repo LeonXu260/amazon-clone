@@ -9,6 +9,10 @@ function Login() {
   const signIn = (e) => {
     e.preventDefault();
   };
+
+  const register = (e) => {
+    e.preventDefault();
+  };
   return (
     <section className="login">
       <Link to="/">
@@ -50,7 +54,11 @@ function Login() {
           Interest-Based Ads Notice.
         </p>
 
-        <button className="login__registerButton">
+        <button
+          className="login__registerButton"
+          type="button"
+          onClick={register}
+        >
           Create your Amazon Account
         </button>
       </article>
