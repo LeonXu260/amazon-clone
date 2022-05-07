@@ -6,7 +6,9 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const signIn = () => {};
+  const signIn = (e) => {
+    e.preventDefault();
+  };
   return (
     <section className="login">
       <Link to="/">
@@ -33,7 +35,11 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <button className="login__signInButton" onClick={signIn}>
+          <button
+            className="login__signInButton"
+            type="submit"
+            onClick={signIn}
+          >
             Sign In
           </button>
         </form>
