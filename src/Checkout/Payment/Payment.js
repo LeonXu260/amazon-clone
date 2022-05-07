@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { useStateValue } from "../../redux/StateProvider";
 import { Link } from "react-router-dom";
 import CheckoutProduct from "../CheckoutProduct";
-import "./Payment.css";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import { CurrencyFormat } from "react-currency-format";
+import { getBasketTotal } from "../../redux/reducer";
+import "./Payment.css";
 
 function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
@@ -58,6 +60,17 @@ function Payment() {
           <article className="payment__details">
             <form onClick={handleSubmit}>
               <CardElement onChange={handleChange} />
+
+              <article className="payment__priceContainer">
+                <CurrencyFormat
+                  renderText={(value) => <h3>Order Total: {value}</h3>}
+                  decimalScale={2}
+                  value={getBasketTotal(basket)}
+                  displayType={"text"}
+                  thousandSeparator={true}
+                  prefix={"$"}
+                />
+              </article>
             </form>
           </article>
         </article>
