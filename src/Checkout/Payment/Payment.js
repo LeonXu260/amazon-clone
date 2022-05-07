@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStateValue } from "../../redux/StateProvider";
 import { Link } from "react-router-dom";
 import CheckoutProduct from "../CheckoutProduct";
@@ -9,6 +9,9 @@ function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
   const stripe = useStripe();
   const elements = useElements();
+
+  const [error, handleError] = useState(null);
+  const [disabled, setDisabled] = useState(true);
 
   const handleSubmit = (e) => {};
   const handleChange = (e) => {};
