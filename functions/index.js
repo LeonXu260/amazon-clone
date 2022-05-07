@@ -11,8 +11,9 @@ app.use(cors({ origin: true }));
 app.use(express.json());
 
 // API Routes
-app.post("/paymens/create", async (req, res) => {
-  const total = request.query.total;
+app.post("/payments/create", async (req, res) => {
+  const total = req.query.total;
+
   const paymentIntent = await stripe.paymentIntents.create({
     amount: total, // subunits of the currency
     currency: "usd",
